@@ -1,6 +1,6 @@
 % Will McFadden (wmcfadden)
 % simulates the 1d active fluid model in the presence of binding and unbinding
-% github hooray
+
 
 T = 1000;       %total time to simulate 
 samps = 100;     %number of timepoints to sample solution
