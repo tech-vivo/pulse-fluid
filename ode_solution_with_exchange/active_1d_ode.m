@@ -35,9 +35,9 @@ function dc = active_1d_ode(t,c,x,m0,K,n,D,l,L,kon,koff)
         end
         jL = (c(left)+c(ind))*(v(left)+v(ind))/4 - D*(c(ind)-c(left))/dx;
         jR = (c(right)+c(ind))*(v(right)+v(ind))/4 - D*(c(right)-c(ind))/dx;
-        dc(left) = dc(left) - jL/2;
-        dc(right) = dc(right) + jR/2;
-        dc(ind) = dc(ind) + jL/2 - jR/2;
+        dc(ind) = dc(ind) - (jR - jL)/dx;
+        dc(left) = dc(left) - jL/dx;
+        dc(right) = dc(right) + jR/dx;
     end
     
     %% add the change in concentration due to simple reaction kinetics
